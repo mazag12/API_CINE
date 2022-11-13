@@ -31,8 +31,8 @@ public class ClienteController{
 	}	
 //	
 //	//@GetMapping("/lista/{codigo}")
-	@RequestMapping(path = "/Cliente/{codigo}", method = RequestMethod.GET)
-	public  Cliente List(@RequestParam("codigo") String cod) {
+	@RequestMapping(path = "/Cliente", method = RequestMethod.GET)
+	public  Cliente List(@RequestParam(name = "codigo", required = true) String cod) {
 		return clienteservicio.encontrarCliente(cod);
 	}
 //	
@@ -50,7 +50,7 @@ public class ClienteController{
 //	
 //	//@DeleteMapping("/eliminar/{codigo}")
 	@RequestMapping(path = "/Cliente/{codigo}", method = RequestMethod.DELETE)
-	public void eliminar(@RequestParam("codigo") String cod) {
+	public void eliminar(@RequestParam(name = "codigo", required = true) String cod) {
 		clienteservicio.eliminar(cod);
 	}
 		

@@ -37,7 +37,7 @@ public class PeliculaController {
 	
 	//@GetMapping("/lista/{codigo}")
 	@RequestMapping(path = "/Pelicula/{codigo}", method = RequestMethod.GET)
-	public  Pelicula List(@RequestParam("codigo") String cod) {
+	public  Pelicula List(@RequestParam(name = "codigo", required = true) String cod) {
 		return peliculaservicio.encontrarPelicula(cod);
 	}
 	
@@ -55,7 +55,7 @@ public class PeliculaController {
 	
 	//@DeleteMapping("/eliminar/{codigo}")
 	@RequestMapping(path = "/Pelicula/{codigo}", method = RequestMethod.DELETE)
-	public void eliminar(@RequestParam("codigo") String cod) {
+	public void eliminar(@RequestParam(name = "codigo", required = true) String cod) {
 		peliculaservicio.eliminar(cod);
 	}
 	
@@ -69,7 +69,7 @@ public class PeliculaController {
 	
 	//@GetMapping("/Tipo/lista/{codigo}")
 	@RequestMapping(path = "/Tipo/{codigo}", method = RequestMethod.GET)
-	public  Tipopelicula ListTipoPelicula(@RequestParam("codigo") Integer cod) {
+	public  Tipopelicula ListTipoPelicula(@RequestParam(name = "codigo", required = true) Integer cod) {
 		return tipopeliculaservicio.encontrarTipopelicula(cod);
 	}
 	
@@ -87,7 +87,7 @@ public class PeliculaController {
 	
 	//@DeleteMapping("/Tipo/eliminar/{codigo}")
 	@RequestMapping(path = "/Tipo/{codigo}", method = RequestMethod.DELETE)
-	public void eliminarTipoPelicula(@RequestParam("codigo") Integer cod) {
+	public void eliminarTipoPelicula(@RequestParam(name = "codigo", required = true) Integer cod) {
 		tipopeliculaservicio.eliminar(cod);
 	}
 	

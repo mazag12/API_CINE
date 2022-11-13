@@ -32,7 +32,7 @@ public class VentaController {
 	
 	//@GetMapping("/lista/{codigo}")
 	@RequestMapping(path = "/Venta/{codigo}", method = RequestMethod.GET)
-	public  Venta List(@RequestParam("codigo") String cod) {
+	public  Venta List(@RequestParam(name = "codigo", required = true) String cod) {
 		return ventaservicio.encontrarVenta(cod);
 	}
 	
@@ -50,7 +50,7 @@ public class VentaController {
 	
 	//@DeleteMapping("/eliminar/{codigo}")
 	@RequestMapping(path = "/Venta/{codigo}", method = RequestMethod.DELETE)
-	public void eliminar(@RequestParam("codigo") String cod) {
+	public void eliminar(@RequestParam(name = "codigo", required = true) String cod) {
 		ventaservicio.eliminar(cod);
 	}
 		
