@@ -30,7 +30,7 @@ public class VentaController {
 	}	
 	
 	//@GetMapping("/lista/{codigo}")
-	@RequestMapping(path = "/Venta", method = RequestMethod.GET)
+	@RequestMapping(path = "/Venta/{codigo}", method = RequestMethod.GET)
 	public  Venta List(@PathVariable("codigo") String cod) {
 		return ventaservicio.encontrarVenta(cod);
 	}
@@ -48,7 +48,7 @@ public class VentaController {
 	}
 	
 	//@DeleteMapping("/eliminar/{codigo}")
-	@RequestMapping(path = "/Venta", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/Venta/{codigo}", method = RequestMethod.DELETE)
 	public void eliminar(@PathVariable("codigo") String cod) {
 		ventaservicio.eliminar(cod);
 	}
