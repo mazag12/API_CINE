@@ -32,7 +32,7 @@ public class UserController {
 	
 	//@GetMapping("/lista/{codigo}")
 	@RequestMapping(path = "/Usuario/{codigo}", method = RequestMethod.GET)
-	public  Usercine List(@RequestParam(name = "codigo", required = true) Integer cod) {
+	public  Usercine List(@PathVariable(name = "codigo", required = true) Integer cod) {
 		return usuarioservicio.encontrarUsuario(cod);
 	}
 	
@@ -50,13 +50,13 @@ public class UserController {
 	
 	//@DeleteMapping("/eliminar/{codigo}")
 	@RequestMapping(path = "/Usuario/{codigo}", method = RequestMethod.DELETE)
-	public void eliminar(@RequestParam(name = "codigo", required = true) Integer cod) {
+	public void eliminar(@PathVariable(name = "codigo", required = true) Integer cod) {
 		usuarioservicio.eliminar(cod);
 	}
 	
 	//@GetMapping("/buscar/{nombre}")
 	@RequestMapping(path = "/Usuario/Buscar/{codigo}", method = RequestMethod.GET)
-	public Usercine buscar(@RequestParam(name = "codigo", required = true) String nombre) {
+	public Usercine buscar(@PathVariable(name = "codigo", required = true) String nombre) {
 		return usuarioservicio.buscarNombre(nombre);
 	}
 	
