@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import sample.entity.Usercine;
@@ -31,7 +32,7 @@ public class UserController {
 	
 	//@GetMapping("/lista/{codigo}")
 	@RequestMapping(path = "/Usuario/{codigo}", method = RequestMethod.GET)
-	public  Usercine List(@PathVariable("codigo") Integer cod) {
+	public  Usercine List(@RequestParam("codigo") Integer cod) {
 		return usuarioservicio.encontrarUsuario(cod);
 	}
 	
@@ -49,13 +50,13 @@ public class UserController {
 	
 	//@DeleteMapping("/eliminar/{codigo}")
 	@RequestMapping(path = "/Usuario/{codigo}", method = RequestMethod.DELETE)
-	public void eliminar(@PathVariable("codigo") Integer cod) {
+	public void eliminar(@RequestParam("codigo") Integer cod) {
 		usuarioservicio.eliminar(cod);
 	}
 	
 	//@GetMapping("/buscar/{nombre}")
 	@RequestMapping(path = "/Usuario/Buscar/{codigo}", method = RequestMethod.GET)
-	public Usercine buscar(@PathVariable("nombre") String nombre) {
+	public Usercine buscar(@RequestParam("nombre") String nombre) {
 		return usuarioservicio.buscarNombre(nombre);
 	}
 	

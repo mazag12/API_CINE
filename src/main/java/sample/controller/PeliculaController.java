@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import sample.entity.Pelicula;
@@ -36,7 +37,7 @@ public class PeliculaController {
 	
 	//@GetMapping("/lista/{codigo}")
 	@RequestMapping(path = "/Pelicula/{codigo}", method = RequestMethod.GET)
-	public  Pelicula List(@PathVariable("codigo") String cod) {
+	public  Pelicula List(@RequestParam("codigo") String cod) {
 		return peliculaservicio.encontrarPelicula(cod);
 	}
 	
@@ -54,7 +55,7 @@ public class PeliculaController {
 	
 	//@DeleteMapping("/eliminar/{codigo}")
 	@RequestMapping(path = "/Pelicula/{codigo}", method = RequestMethod.DELETE)
-	public void eliminar(@PathVariable("codigo") String cod) {
+	public void eliminar(@RequestParam("codigo") String cod) {
 		peliculaservicio.eliminar(cod);
 	}
 	
@@ -68,7 +69,7 @@ public class PeliculaController {
 	
 	//@GetMapping("/Tipo/lista/{codigo}")
 	@RequestMapping(path = "/Tipo/{codigo}", method = RequestMethod.GET)
-	public  Tipopelicula ListTipoPelicula(@PathVariable("codigo") Integer cod) {
+	public  Tipopelicula ListTipoPelicula(@RequestParam("codigo") Integer cod) {
 		return tipopeliculaservicio.encontrarTipopelicula(cod);
 	}
 	
@@ -86,7 +87,7 @@ public class PeliculaController {
 	
 	//@DeleteMapping("/Tipo/eliminar/{codigo}")
 	@RequestMapping(path = "/Tipo/{codigo}", method = RequestMethod.DELETE)
-	public void eliminarTipoPelicula(@PathVariable("codigo") Integer cod) {
+	public void eliminarTipoPelicula(@RequestParam("codigo") Integer cod) {
 		tipopeliculaservicio.eliminar(cod);
 	}
 	

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import sample.entity.Venta;
@@ -31,7 +32,7 @@ public class VentaController {
 	
 	//@GetMapping("/lista/{codigo}")
 	@RequestMapping(path = "/Venta/{codigo}", method = RequestMethod.GET)
-	public  Venta List(@PathVariable("codigo") String cod) {
+	public  Venta List(@RequestParam("codigo") String cod) {
 		return ventaservicio.encontrarVenta(cod);
 	}
 	
@@ -49,7 +50,7 @@ public class VentaController {
 	
 	//@DeleteMapping("/eliminar/{codigo}")
 	@RequestMapping(path = "/Venta/{codigo}", method = RequestMethod.DELETE)
-	public void eliminar(@PathVariable("codigo") String cod) {
+	public void eliminar(@RequestParam("codigo") String cod) {
 		ventaservicio.eliminar(cod);
 	}
 		
