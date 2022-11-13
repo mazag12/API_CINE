@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,8 +32,8 @@ public class ClienteController{
 	}	
 //	
 //	//@GetMapping("/lista/{codigo}")
-	@RequestMapping(path = "/Cliente", method = RequestMethod.GET)
-	public  Cliente List(@RequestParam(name = "codigo", required = true) String cod) {
+	@RequestMapping(path = "/Cliente/{codigo}", method = RequestMethod.GET)
+	public  Cliente List(@PathVariable(name = "codigo", required = true) String cod) {
 		return clienteservicio.encontrarCliente(cod);
 	}
 //	
@@ -50,7 +51,7 @@ public class ClienteController{
 //	
 //	//@DeleteMapping("/eliminar/{codigo}")
 	@RequestMapping(path = "/Cliente/{codigo}", method = RequestMethod.DELETE)
-	public void eliminar(@RequestParam(name = "codigo", required = true) String cod) {
+	public void eliminar(@PathVariable(name = "codigo", required = true) String cod) {
 		clienteservicio.eliminar(cod);
 	}
 		
