@@ -55,7 +55,7 @@ public class ClienteController{
 		clienteservicio.eliminar(cod);
 	}
 	
-	@RequestMapping(path = "/Cliente/buscar/{codigo}", method = RequestMethod.GET)
+	@RequestMapping(path = "/Cliente/buscar/{nombre}", method = RequestMethod.GET)
 	public  Cliente buscar(@PathVariable(name = "nombre", required = true) String nombre) {
 		return clienteservicio.buscarCliente(nombre);
 	}
