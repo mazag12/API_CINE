@@ -58,8 +58,8 @@ public class ClienteController{
 	}
 	
 	@RequestMapping(path = "/Cliente/buscar/{nombre}", method = RequestMethod.GET)
-	public  ResponseEntity<Cliente> buscar(@PathVariable(name = "nombre", required = true) String nombre) {
-		return  new  ResponseEntity<Cliente>(clienteservicio.buscarCliente(nombre), HttpStatus.OK);
+	public  ResponseEntity<String> buscar(@PathVariable(name = "nombre", required = true) String nombre) {
+		return  new  ResponseEntity<String>(clienteservicio.buscarCliente(nombre).getId(), HttpStatus.OK);
 	}
 	
 }
