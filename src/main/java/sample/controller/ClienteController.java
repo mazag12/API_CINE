@@ -54,5 +54,10 @@ public class ClienteController{
 	public void eliminar(@PathVariable(name = "codigo", required = true) String cod) {
 		clienteservicio.eliminar(cod);
 	}
-		
+	
+	@RequestMapping(path = "/Cliente/buscar/{codigo}", method = RequestMethod.GET)
+	public  Cliente buscar(@PathVariable(name = "nombre", required = true) String nombre) {
+		return clienteservicio.buscarCliente(nombre);
+	}
+	
 }

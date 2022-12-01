@@ -16,4 +16,6 @@ public interface ClienteService {
 	
 	public Cliente encontrarCliente(String cod);
 	
+	public Cliente buscarCliente(String nombre);
+	
 }
