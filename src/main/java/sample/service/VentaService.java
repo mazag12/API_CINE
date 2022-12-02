@@ -8,7 +8,7 @@ public interface VentaService {
 
 	public List<Venta> ListarVenta();
 	
-	public void guardar (Venta venta);
+	public Integer guardar (Venta venta);
 	
 	public void actualizar (Venta venta);
 	

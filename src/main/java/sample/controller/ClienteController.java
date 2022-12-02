@@ -16,7 +16,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import sample.entity.Cliente;
+import sample.entity.Detalleventa;
+import sample.entity.Reservacion;
+import sample.entity.Venta;
 import sample.service.ClienteService;
+import sample.service.ReservarService;
+import sample.service.VentaService;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 @RestController
 //@RequestMapping("/Cliente")
@@ -24,6 +34,11 @@ public class ClienteController{
 
 	@Autowired
 	private ClienteService clienteservicio;
+	
+	@Autowired
+	private VentaService ventaservicio;
+	
+	
 //	
 	//@GetMapping("/lista")
 	@RequestMapping(path = "/Cliente/lista", method = RequestMethod.GET)
@@ -59,5 +74,6 @@ public class ClienteController{
 	public  Cliente  buscar(@PathVariable(name = "nombre", required = true) String nombre) {
 		return clienteservicio.buscarCliente(nombre);
 	}
+	
 	
 }

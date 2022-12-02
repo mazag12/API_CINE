@@ -23,8 +23,9 @@ public class VentaServiceImpl implements VentaService{
 
 	@Override
 	@Transactional
-	public void guardar(Venta venta) {
-		VentaRepository.save(venta);
+	public Integer guardar(Venta venta) {
+		Venta nuevaVenta = VentaRepository.save(venta);
+		return nuevaVenta.getIdventa();
 	}
 
 	@Override

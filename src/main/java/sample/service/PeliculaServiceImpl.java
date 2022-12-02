@@ -45,6 +45,11 @@ public class PeliculaServiceImpl implements PeliculaService{
 		return peliculaRepository.findById(cod).orElse(null);
 	}
 
+	@Override
+	public Pelicula nombrePelicula(String nombre) {
+		return peliculaRepository.findByTitulo(nombre);
+	}
+
 	
 	
 }

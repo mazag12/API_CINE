@@ -41,6 +41,11 @@ public class PeliculaController {
 		return peliculaservicio.encontrarPelicula(cod);
 	}
 	
+	@RequestMapping(path = "/Pelicula/Titulo/{titulo}", method = RequestMethod.GET)
+	public  Pelicula titulo(@PathVariable(name = "titulo", required = true) String titulo) {
+		return peliculaservicio.nombrePelicula(titulo);
+	}
+	
 	//@PostMapping("/registar")
 	@RequestMapping(path = "/Pelicula", method = RequestMethod.POST)
 	public void registrar(@RequestBody Pelicula usuario) {

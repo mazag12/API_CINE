@@ -6,4 +6,6 @@ import sample.entity.Pelicula;
 
 public interface PeliculaRespositorio extends CrudRepository<Pelicula, String> {
 
+	Pelicula findByTitulo(String titulo);
+	
 }

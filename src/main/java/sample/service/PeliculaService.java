@@ -16,4 +16,6 @@ public interface PeliculaService {
 	
 	public Pelicula encontrarPelicula(String cod);
 	
+	public Pelicula nombrePelicula(String nombre);
+	
 }
